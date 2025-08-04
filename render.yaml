@@ -4,8 +4,21 @@ services:
     runtime: image
     name: n8n-service
     image:
-      url: docker.io/n8nio/n8n:latest  # later pin to a specific version once stable
-    envVars:
+      url: docker.io/n8nio/n8n:latest
+    envVars:     
+      - key: N8N_ENCRYPTION_KEY
+        generateValue: true
+      - key: DB_TYPE
+        value: "postgresdb"
+      - key: DB_POSTGRESDB_HOST
+        value: "ep-late-wind-a1r9ov3a-pooler.ap-southeast-1.aws.neon.tech"  
+      - key: DB_POSTGRESDB_DATABASE
+        value: "neondb" 
+      - key: DB_POSTGRESDB_USER
+        value: "neondb_owner"
+      - key: DB_POSTGRESDB_PASSWORD
+        value: "npg_yU4fTCknb0pm"
+
       # Core n8n deployment/settings
       - key: N8N_PROTOCOL
         value: "https"
@@ -13,22 +26,3 @@ services:
         value: "n8n-service-hb1l.onrender.com"
       - key: N8N_EDITOR_BASE_URL
         value: "https://n8n-service-hb1l.onrender.com/"
-      - key: WEBHOOK_URL
-        value: "https://n8n-service-hb1l.onrender.com/"
-
-      # Credentials encryption (persisted so you don't lose existing credentials)
-      - key: N8N_ENCRYPTION_KEY
-        generateValue: true  # or replace with fromSecret if you want to manage it yourself
-
-      # === External Postgres configuration (not Render Postgres) ===
-      - key: DB_TYPE
-        value: "postgresdb"
-      - key: DB_POSTGRESDB_HOST
-        value: "ep-late-wind-a1r9ov3a-pooler.ap-southeast-1.aws.neon.tech"          # e.g., db.example.com
-      - key: DB_POSTGRESDB_PORT
-        value: "5432"                          # adjust if your Postgres listens on another port
-      - key: DB_POSTGRESDB_DATABASE
-        value: "neondb"          # e.g., n8n
-      - key: DB_POSTGRESDB_USER
-        value: "neondb_owner"
-      - fromGroup: n8n-group
