@@ -33,3 +33,4 @@ services:
         value: "neondb_owner"
       - key: DB_POSTGRESDB_PASSWORD
         fromSecret: DB_POSTGRESDB_PASSWORD  
+      - fromGroup: n8n-group
