@@ -18,8 +18,12 @@ services:
         value: "neondb_owner"
       - key: DB_POSTGRESDB_PASSWORD
         value: "npg_yU4fTCknb0pm"
-      - key: DB_SSL
-        value: "true"
+      - key: DB_POSTGRESDB_PORT
+        value: 5432
+      - key: DB_POSTGRESDB_SSL_ENABLED
+        value: true
+      - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+        value: true
         
       # Core n8n deployment/settings
       - key: N8N_PROTOCOL
