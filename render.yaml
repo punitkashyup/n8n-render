@@ -10,39 +10,26 @@ services:
       - key: N8N_PROTOCOL
         value: "https"
       - key: N8N_HOST
-        fromSecret: N8N_HOST
+        value: "n8n-service-hb1l.onrender.com"
       - key: N8N_EDITOR_BASE_URL
-        fromSecret: N8N_HOST
+        value: "https://n8n-service-hb1l.onrender.com/"
       - key: WEBHOOK_URL
-        fromSecret: N8N_HOST
+        value: "https://n8n-service-hb1l.onrender.com/"
 
       # Credentials encryption (persisted so you don't lose existing credentials)
       - key: N8N_ENCRYPTION_KEY
-        generateValue: true
-
-      # Basic auth (strongly recommended for public-facing instances)
-      - key: N8N_BASIC_AUTH_ACTIVE
-        value: "true"
-      - key: N8N_BASIC_AUTH_USER
-        fromSecret: N8N_BASIC_AUTH_USER
-      - key: N8N_BASIC_AUTH_PASSWORD
-        fromSecret: N8N_BASIC_AUTH_PASSWORD
+        generateValue: true  # or replace with fromSecret if you want to manage it yourself
 
       # === External Postgres configuration (not Render Postgres) ===
       - key: DB_TYPE
-        fromSecret: DB_TYPE 
-        
+        value: "postgresdb"
       - key: DB_POSTGRESDB_HOST
-        fromSecret: DB_POSTGRESDB_HOST     
-       
+        value: "ep-late-wind-a1r9ov3a-pooler.ap-southeast-1.aws.neon.tech"          # e.g., db.example.com
       - key: DB_POSTGRESDB_PORT
-        value: "5432"
-       
+        value: "5432"                          # adjust if your Postgres listens on another port
       - key: DB_POSTGRESDB_DATABASE
-        fromSecret: DB_POSTGRESDB_DATABASE  
-
+        value: "neondb"          # e.g., n8n
       - key: DB_POSTGRESDB_USER
-        fromSecret: DB_POSTGRESDB_USER 
-        
+        value: "neondb_owner"
       - key: DB_POSTGRESDB_PASSWORD
-        fromSecret: DB_POSTGRESDB_PASSWORD       
+        fromSecret: DB_POSTGRESDB_PASSWORD  
