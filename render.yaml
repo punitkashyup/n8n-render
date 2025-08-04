@@ -26,3 +26,5 @@ services:
         value: "n8n-service-hb1l.onrender.com"
       - key: N8N_EDITOR_BASE_URL
         value: "https://n8n-service-hb1l.onrender.com/"
+      - key: WEBHOOK_URL
+        value: "https://n8n-service-hb1l.onrender.com/"
