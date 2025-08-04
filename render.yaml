@@ -18,7 +18,9 @@ services:
         value: "neondb_owner"
       - key: DB_POSTGRESDB_PASSWORD
         value: "npg_yU4fTCknb0pm"
-
+      - key: DB_SSL
+        value: "true"
+        
       # Core n8n deployment/settings
       - key: N8N_PROTOCOL
         value: "https"
