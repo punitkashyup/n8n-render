@@ -11,13 +11,13 @@ services:
       - key: DB_TYPE
         value: "postgresdb"
       - key: DB_POSTGRESDB_HOST
-        value: "ep-late-wind-a1r9ov3a-pooler.ap-southeast-1.aws.neon.tech"  
+        value: "ep-silent-silence-a1cardy0-pooler.ap-southeast-1.aws.neon.tech"  
       - key: DB_POSTGRESDB_DATABASE
         value: "neondb" 
       - key: DB_POSTGRESDB_USER
         value: "neondb_owner"
       - key: DB_POSTGRESDB_PASSWORD
-        value: "npg_yU4fTCknb0pm"
+        value: "npg_Rc3pHS0TqIzZ"
       - key: DB_POSTGRESDB_PORT
         value: 5432
       - key: DB_POSTGRESDB_SSL_ENABLED
